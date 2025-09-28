@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Benguela - Multimédia</title>
+
+        <link rel="stylesheet" href="styles.css">
         <style>
         .fotografias {
             display: flex;
@@ -14,6 +16,28 @@
             width: 150px;
             border-radius: 20px;
         }
+
+        .poema p {
+            text-align: center;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .poema p:first-of-type {
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .poema p:nth-child(2n) {
+            color:blue;
+            font-style: italic;
+        }
+        .poema p:nth-child(2n + 1):not(:first-child) {
+            color: #d62828;
+            font-style: italic;
+        }
+
+
+    
     </style>
     </head>
     <body>
@@ -29,9 +53,16 @@
         <main>
             <h2>Multimédia</h2>
             <p>Galeria de imagens e vídeos de Benguela</p>
+
+            <div class="menu-ancoras">
+                <p>Navegação rápida:</p>
+                <a href="#fotografias">Fotografias</a>
+                <a href="#video">Vídeo</a>
+                <a href="#poema">Poesia</a>
+            </div>
             
             <section>
-                <h3>Fotografias</h3>
+                <h3 id="fotografias">Fotografias</h3>
 
                 <div class="fotografias">
                     <img src="images/Benguela.jpg" alt="Minha cidade2">
@@ -46,6 +77,25 @@
                 </div>
 
             
+            </section>
+
+            <section>
+                <h3 id="video">Vídeo</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Jwtbgwal-a4?si=g6TsDl2H5YTsgxLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section>
+                <h3 id="poema">Poesia</h3>
+                
+                <div class="poema">
+                    <p>Benguela</p>
+                    <p>Cidade do mar e da brisa leve,</p>
+                    <p>Teu sol dourado nunca se atreve.</p>
+                    <p>Guardas memórias de um povo forte,</p>
+                    <p>És vida, és alma, és livre sorte.</p>
+                    <p>No teu abraço a esperança mora,</p>
+                    <p>Benguela eterna, que sempre aflora.</p>
+                </div>
             </section>
             
         </main>
