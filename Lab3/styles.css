@@ -1,0 +1,106 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    nav a {
+        padding: 15px;
+        border-bottom: 1px solid #555;
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.mapa-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.mapa-wrapper iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .localizacao-flex {
+        flex-direction: column; 
+        gap: 20px;
+    }
+    
+    .texto-info {
+        order: 1; 
+        min-width: unset;
+    }
+    
+    .mapa-wrapper {
+        order: 2; 
+        min-width: unset;
+    }
+    
+    .mapa-wrapper iframe {
+        height: 300px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .localizacao-flex {
+        gap: 15px;
+    }
+    
+    .mapa-wrapper iframe {
+        height: 250px;
+    }
+}

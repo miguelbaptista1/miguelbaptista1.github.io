@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Benguela - Informação</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        header h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        
+        nav {
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 30px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+        }
+        
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        
+        
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;  /* 4 colunas iguais */
+            grid-template-rows: auto auto auto auto;   /* 4 linhas automáticas */
+            gap: 20px;  /* Espaço entre as caixas */
+        }
+        
+        
+        .grid-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+       
+        .titulo {
+            grid-column: 1 / 5;  
+            grid-row: 1;
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+        }
+        
+        /* Demografia - ocupa 2 colunas da linha 2 */
+        .demografia {
+            grid-column: 1 / 3;  
+            grid-row: 2;
+            background-color: #0f03fc;
+            color: white;
+        }
+        
+        
+        .conteudo-principal {
+            grid-column: 3 / 5;  
+            grid-row: 2 / 4;     
+            background-color: #7300ff;
+            color: white;
+        }
+        
+        
+        .geografia {
+            grid-column: 1 / 3;
+            grid-row: 3;
+            background-color: #9a6ddf;
+            color: white;
+        }
+        
+        
+        .curiosidades {
+            grid-column: 1 / 5;
+            grid-row: 4;
+            background-color: #9C27B0;
+            color: white;
+        }
+        
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        th {
+            background-color: rgba(255,255,255,0.2);
+            font-weight: bold;
+        }
+        
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;  
+            }
+            
+           
+            .grid-item {
+                grid-column: 1 !important;
+                grid-row: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <header>
+        <h1>A minha Cidade</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="grid-container">
+            
+            
+            <div class="grid-item titulo">
+                <h2>Benguela - Informações</h2>
+                <p>Descubra mais sobre a minha cidade</p>
+            </div>
+            
+
+            <div class="grid-item demografia">
+                <h3>Demografia</h3>
+                <table>
+                    <tr>
+                        <th>População</th>
+                        <td>750.000 hab</td>
+                    </tr>
+                    <tr>
+                        <th>Densidade</th>
+                        <td>120 hab/km²</td>
+                    </tr>
+                </table>
+            </div>
+            
+            
+            <div class="grid-item conteudo-principal">
+                <h3>Sobre Benguela</h3>
+                <p>Benguela é uma cidade costeira de Angola, conhecida pelas suas belas praias e rica história.</p>
+                <br>
+                <p>A cidade foi fundada em 1617 e é um importante centro económico do país.</p>
+                <br>
+                <p><strong>Website:</strong> www.benguela.gov.ao</p>
+            </div>
+            
+            
+            <div class="grid-item geografia">
+                <h3>Geografia</h3>
+                <table>
+                    <tr>
+                        <th>Área</th>
+                        <td>6.250 km²</td>
+                    </tr>
+                    <tr>
+                        <th>Região</th>
+                        <td>Litoral Sul</td>
+                    </tr>
+                    <tr>
+                        <th>País</th>
+                        <td>Angola</td>
+                    </tr>
+                </table>
+            </div>
+            
+            
+            <div class="grid-item curiosidades">
+                <h3>Curiosidades sobre Benguela</h3>
+                <ul>
+                    <li>É conhecida como a "Pérola do Atlântico"</li>
+                    <li>Tem uma das maiores frotas pesqueiras de Angola</li>
+                    <li>O Caminho de Ferro de Benguela liga ao interior</li>
+                    <li>Famosa pelas praias de areia branca</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

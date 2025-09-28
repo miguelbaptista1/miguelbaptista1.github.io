@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Benguela - Multimédia</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            .fotografias {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .fotografias img{
+                width: 150px;
+                border-radius: 20px;
+            }
+
+            /* Container para a imagem com transição */
+            .container-imagem {
+                position: relative;
+                width: 100%;
+            }
+
+            .imagem-transicao {
+                width: 100%;
+                height: 200px; 
+                overflow: hidden; 
+                border-radius: 10px;
+                transition: height 1s ease; 
+            }
+
+            .imagem-transicao img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+            }
+
+            .imagem-transicao:hover {
+                height: 400px; 
+            }
+
+            /* Texto sobreposto */
+            .overlay-text {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                color: white;
+                background: rgba(0, 0, 0, 0.7);
+                padding: 15px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                z-index: 10;
+            }
+
+            .overlay-text h3 {
+                margin: 0 0 5px 0;
+                font-size: 5vw;
+            }
+
+            .overlay-text p {
+                margin: 0;
+                font-size: 3vw;
+            }
+
+            @media (min-width: 768px) {
+                .overlay-text h3 {
+                    font-size: 1.5rem;
+                }
+                
+                .overlay-text p {
+                    font-size: 1rem;
+                }
+            }
+
+            /* Estilos do poema */
+            .poema p {
+                text-align: center;
+                font-size: 18px;
+                margin: 5px 0;
+            }
+
+            .poema p:first-of-type {
+                font-weight: bold;
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            .poema p:nth-child(2n) {
+                color:blue;
+                font-style: italic;
+            }
+
+            .poema p:nth-child(2n + 1):not(:first-child) {
+                color: #d62828;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>A minha Cidade</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="local.html">Localização</a>
+                <a href="multimedia.html">Multimédia</a>
+                <a href="info.html">Informação</a>
+            </nav>
+        </header>
+        <main>
+            <h2>Multimédia</h2>
+            <p>Galeria de imagens e vídeos de Benguela</p>
+
+            <div class="menu-ancoras">
+                <p>Navegação rápida:</p>
+                <a href="#fotografias">Fotografias</a>
+                <a href="#video">Vídeo</a>
+                <a href="#poema">Poesia</a>
+            </div>
+            
+            <section>
+                <h3 id="fotografias">Fotografias</h3>
+
+                <div class="fotografias">
+                    <img src="images/Benguela.jpg" alt="Minha cidade2">
+                    <img src="images/Bneguela1.jpg" alt="Minha cidade3">
+                    <img src="images/images.jpg" alt="Minha cidade2">
+                    <img src="images/transferir (1).jpg" alt="Minha cidade3">
+                    <img src="images/transferir (2).jpg" alt="Minha cidade4">
+                    <img src="images/transferir (3).jpg" alt="Minha cidade5">
+                    <img src="images/transferir (4).jpg" alt="Minha cidade6">
+                    <img src="images/transferir (5).jpg" alt="Minha cidade7">
+
+                </div>
+
+            
+            </section>
+
+           <section>
+                <h4 id="imagem">Imagem</h4>
+                <div class="container-imagem">
+                    <div class="imagem-transicao">
+                        <img src="images/cat.jpg" alt="Fotografia emblemática">
+                    </div>
+                    <div class="overlay-text">
+                        <h3>Benguela, a Pérola do Atlântico</h3>
+                        <p>Miau</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 id="video">Vídeo</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Jwtbgwal-a4?si=g6TsDl2H5YTsgxLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section>
+                <h3 id="poema">Poesia</h3>
+                
+                <div class="poema">
+                    <p>Benguela</p>
+                    <p>Cidade do mar e da brisa leve,</p>
+                    <p>Teu sol dourado nunca se atreve.</p>
+                    <p>Guardas memórias de um povo forte,</p>
+                    <p>És vida, és alma, és livre sorte.</p>
+                    <p>No teu abraço a esperança mora,</p>
+                    <p>Benguela eterna, que sempre aflora.</p>
+                </div>
+            </section>
+            
+        </main>
+        <footer>
+            <p>DIW 2025</p>
+        </footer>
+    </body>
+</html>

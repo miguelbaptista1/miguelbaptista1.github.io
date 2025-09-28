@@ -9,43 +9,88 @@
 <body>
     <header>
         <h1>Miguel Baptista</h1>
+
+        
         
         
     </header>
 
     <main>
-        <p>Eis a minha primeira página Web!</p>
+        
 
-        
-        
-        <p>
-            Na Unidade Curricular de 
-            <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232" target="_blank">
-                Desenvolvimento de Interfaces Web
-            </a> 
-            abordaremos as seguintes tecnologias Web &#127760;:
-        </p>
-        
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React e Next.js</li>
-        </ul>
-        
-        <p>Iremos criar soluções criativas!</p>
-
-        <nav>
+       <section id="inicio" class="hero-section">
+        <nav class="hero-nav">
             <ul>
-                <li><a href="Lab1/index.html">Lab1</a></li>
-                <li><a href="Lab2/index.html">Lab2</a></li>
-                    
-                
+                <li><a href="#inico">Início</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#cadeira">Interfaces Web</a></li>
             </ul>
         </nav>
+
+        <div class="hero-content">
+            <p>Eis a minha primeira página Web!</p>
+            <img src="images/cr7.jpeg" alt="Meu hero">
+            
+            <button class="cta-button">
+                <a href="#projetos">Ver Projetos</a>
+            </button>
+        </div>
+
+       </section>
+
+       <section id="projetos">
+        <h2>Projetos</h2>
         
-        <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web"> <style> img { width: 301px;}</style>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Lab 1</h3>
+                <p>Estrutura base e semântica</p>
+                <a href="Lab1/index.html">Ver Projeto</a>
+            </div>
         
+            <div class="project-card">
+                <h3>Lab 2</h3>
+                <p>Estilos e layout responsivo</p>
+                <a href="Lab2/index.html">Ver Projeto</a>
+            </div>
+        
+            <div class="project-card">
+                <h3>Lab 3</h3>
+                <p>Interatividade com JS</p>
+                <a href="Lab3/index.html">Ver Projeto</a>
+            </div>
+        </div>
+        <p>Iremos criar soluções criativas!</p>
+    </section>
+
+    
+    <section id="cadeira">
+    <h2>Interfaces Web</h2>
+    
+    
+    <div class="discipline-container">
+        <div class="discipline-text">
+            <p>
+                Na Unidade Curricular de 
+                <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232" target="_blank">
+                    Desenvolvimento de Interfaces Web
+                </a> 
+                abordaremos as seguintes tecnologias Web &#127760;:
+            </p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React e Next.js</li>
+            </ul>
+        </div>
+        
+        <div class="discipline-image">
+            <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web">
+        </div>
+    </div>
+</section>
+
     </main>
 
     <footer>
