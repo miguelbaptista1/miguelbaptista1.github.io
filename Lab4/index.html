@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab4</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        function cr7() {
+           const frase = document.querySelector('h1');
+           if(frase.innerHTML === 'Cristiano Ronaldo') {
+           frase.innerHTML= 'SUIIIIIII!!!';
+           frase.style.color= 'blue';
+           }
+
+           else{
+            frase.innerHTML= 'Cristiano Ronaldo'; 
+            frase.style.color= 'darkturquoise';
+           }
+        }
+
+        let counter = 0;
+        function count(){
+            counter++;
+            const contadorNum = document.querySelector('#contador')
+            contadorNum.textContent = counter;
+        }
+
+        function goat() {
+            const frase = document.querySelector('h2')
+            frase.addEventListener('mouseover', () => {
+                frase.textContent= 'É o ronaldo!!!';
+                frase.style.color= 'red';
+            });
+
+            frase.addEventListener('mouseout', () => {
+                frase.textContent= 'O melho do mundo!';
+                frase.style.color= 'darkturquoise';
+            });
+            
+
+            }
+
+            window.onload = goat;// garante que o h2 ja existe antes de tentar chamar a funçao (como n usamos em aula estou a explicar para saber o que faz)
+    
+            function imgGoat() {
+            const frase = document.querySelector('img');
+            imagem.addEventListener('click', () => {
+                if(document.body.style.backgroundColor = 'black') {
+                    document.body.style.backgroundColor = rgb(177, 102, 143);
+                    
+                } else {
+                    document.body.style.backgroundColor = 'black';
+                }
+            });
+            }
+
+            window.addEventListener('load', () => {
+                goat();
+                imgGoat();
+            });
+            
+
+
+            
+            
+    </script>
+</head>
+<body>
+
+    <h1 style="color: darkturquoise;">Cristiano Ronaldo</h1>
+    
+    <button onclick="cr7()">Clique aqui</button>
+    <br> <br>
+    <button onclick="count()">SOMA</button>
+    <p>Total de cliques: <span id= "contador">0</span></p>
+    <br>
+    <h2>O melhor do mundo!</h2>
+
+    <img src="/Lab4/ images/GOAT.jpg" alt="Foto do ronaldo" width= "200">
+    
+</body>
+</html>
