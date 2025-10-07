@@ -55,6 +55,14 @@
             });
             }
 
+            function imgGoat() {
+                const imagem = document.querySelector('img');
+                imagem.addEventListener('click', () => {
+                const isBlack = getComputedStyle(document.body).backgroundColor === 'rgb(0, 0, 0)';
+                document.body.style.backgroundColor = isBlack ? 'rgb(177, 102, 143)' : 'black';
+                });
+            }
+
             window.addEventListener('load', () => {
                 goat();
                 imgGoat();
@@ -78,6 +86,7 @@
     <h2>O melhor do mundo!</h2>
 
     <img src="/Lab4/ images/GOAT.jpg" alt="Foto do ronaldo" width= "200">
+    <p>Clique na foto</p>
     
 </body>
 </html>
