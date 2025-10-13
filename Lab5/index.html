@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab5</title>
+
+
+</head>
+<body>
+    <br>
+    <p>1.Passa por aqui</p>
+    <br>
+    <p id="pinta">2.Pinta-me!!</p>
+    <button onclick="pinta('red')">Red</button>
+    <button onclick="pinta('green')">Green</button>
+    <button onclick="pinta('blue')">Blue</button>
+
+    <p >4.Escolha uma cor em inglês:</p>
+    <input type="text" id="inputCor" placeholder="ex: blue, red, green">
+    <button id="botaoSubmeter">submeter</button>
+    
+    <div style="display: flex; align-items: center; gap: 8px">
+        <p>5.</p>
+        <button id="botaoContar">Contar!</button>
+        <span id="conta">0</span>
+    </div>
+    
+
+    
+
+   
+
+    <script>
+
+        function pinta(cor) {
+            document.querySelector("#pinta").style.color = cor;
+
+        }
+
+        const input = document.querySelector("#inputCor");
+        const botao = document.querySelector("#botaoSubmeter")
+
+        botao.addEventListener("click", () => {
+            const cor = input.value.trim().toLowerCase();
+            document.body.style.backgroundColor = cor;
+            input.value = "";
+        });
+
+        const heading = document.querySelector("#conta");
+        const button = document.querySelector("#botaoContar");
+
+        if(!localStorage.getItem('contador')) {
+            localStorage.setItem('contador', 0);
+        }
+
+        heading.textContent = localStorage.getItem('contador')
+
+        function contar() {
+            let contador = Number(localStorage.getItem('contador'));
+            contador++;
+            heading.textContent = contador;
+            localStorage.setItem('contador', contador);
+
+        }
+
+        button.onclick= contar;
+    
+        
+
+        
+    </script>
+</body>
+</html>
