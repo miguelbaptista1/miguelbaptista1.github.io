@@ -1,16 +1,17 @@
-function pinta(cor) {
-    document.querySelector("#pinta").style.color = cor;
-
-}
-
-const input = document.querySelector("#inputCor");
-const botao = document.querySelector("#botaoSubmeter")
-
-botao.addEventListener("click", () => {
-    const cor = input.value.trim().toLowerCase();
-    document.body.style.backgroundColor = cor;
-    input.value = "";
+const pinta = document.querySelector('#pinta');
+document.querySelectorAll('button.color').forEach(btn => {
+  btn.addEventListener('click', () => {
+    pinta.style.color = btn.dataset.color;
+  });
 });
+
+const selectCor= document.querySelector('#selectCor');
+
+document.body.style.backgroundColor = selectCor.value;
+
+selectCor.addEventListener('change', function (){
+    document.body.style.backgroundColor = this.value;
+})
 
 const heading = document.querySelector("#conta");
 const button = document.querySelector("#botaoContar");
@@ -52,3 +53,9 @@ function onLeave() {
 }
 letraAntes.addEventListener('mouseenter', onEnter);
 letraAntes.addEventListener('mouseleave', onLeave);
+
+document.querySelector('form').onsubmit = (e) => {
+  e.preventDefault();
+  const nome = document.querySelector('#nome').value.trim();
+  document.querySelector('#frase').textContent = `Olá, ${nome}!`;
+};

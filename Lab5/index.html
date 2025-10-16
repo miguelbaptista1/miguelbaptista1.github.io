@@ -1,39 +1,115 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab5</title>
-    <script src="app.js" defer></script>
-
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab5</title>
+  <script src="app.js" defer></script>
 </head>
 <body>
-    <br>
-    <div  style="display:flex; align-items:center; gap:8px">
-        <p id="antes">1.Passa por aqui</p>
-        <p id="depois" style="display:none;">Obrigado por teres passado!!</p>
-    </div>
+  <br />
+  <div style="display:flex; align-items:center; gap:8px">
+    <p id="antes">1. Passa por aqui</p>
+    <p id="depois" style="display:none;">Obrigado por teres passado!!</p>
+  </div>
+
+  <br />
+  <p id="pinta">2. Pinta-me!!</p>
+  <button class="color" data-color="red">Red</button>
+  <button class="color" data-color="green">Green</button>
+  <button class="color" data-color="blue">Blue</button>
+
+
+  
+
+  <h3>3. Experimenta escrever...</h3>
+  <input type="text" id="experimenta" placeholder="Escreve algo">
+
+  <p>4. Escolhe uma cor em inglês:</p>
+  <select id="selectCor">
+    <option value="white">White</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="black">Black</option>
+  </select>
+
+  <div style="display:flex; align-items:center; gap:8px">
+    <p>5.</p>
+    <button id="botaoContar" type="button">Contar!</button>
+    <span id="conta">0</span>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <p>6.</p>
+    <form id="formIdade">
+    <input id="nomePessoa" placeholder="Nome" type="text" required>
+    <input type="number" placeholder="Idade" id="idadePessoa" required>
+    <input type="submit" value="Submit">
+    </form>
+
+    <h3 id = "mensagemIdade" ></h3>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <p id="autoCounter">7. Automatic Counter: 0</p>
+  </div>
+
+
+
+
+   <script>
+    const input = document.querySelector('#experimenta');
 
     
-    <br>
-    <p id="pinta">2.Pinta-me!!</p>
-    <button onclick="pinta('red')">Red</button>
-    <button onclick="pinta('green')">Green</button>
-    <button onclick="pinta('blue')">Blue</button>
-
-    <p >4.Escolha uma cor em inglês:</p>
-    <input type="text" id="inputCor" placeholder="ex: blue, red, green">
-    <button id="botaoSubmeter">submeter</button>
-    
-    <div style="display: flex; align-items: center; gap: 8px">
-        <p>5.</p>
-        <button id="botaoContar">Contar!</button>
-        <span id="conta">0</span>
-    </div>
-    
+    const cores = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+    let i = 0;
 
     
+    input.addEventListener('input', () => {
+      input.style.backgroundColor = cores[i];
+      i = (i + 1) % cores.length; 
+    });
 
+    const formIdade = document.querySelector('#formIdade');
+    const nomePessoa = document.querySelector('#nomePessoa');
+    const idadePessoa = document.querySelector('#idadePessoa');       
+    const mensagemIdade = document.querySelector('#mensagemIdade');   
+
+  formIdade.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const nome = nomePessoa.value.trim();
+    const idade = idadePessoa.value.trim();
+
+    if (nome && idade) {
+      mensagemIdade.textContent = `Olá, o/a ${nome} tem ${idade}!`;   
+    } else {
+      mensagemIdade.textContent = 'Por favor preenche ambos os campos.';
+    }
+
+    nomePessoa.value = '';
+    idadePessoa.value = '';
+  });
+
+  const autoCounter = document.querySelector('#autoCounter');
+  let contadorAutomatico = 0;
+
+  function atualizarContador() {
+    contadorAutomatico++
+    autoCounter.textContent = `7. Automatic Counter: ${contadorAutomatico}`;
+
+  }
+
+  setInterval(atualizarContador, 1000)
    
+
+
+
+
+  </script>
+
+
+
+
 </body>
 </html>
